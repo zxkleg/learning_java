@@ -5,6 +5,6 @@ public class Cube implements Shape {
     }
     @Override
     public float getVolume() {
-        return this.side_length *this.side_length * this.side_length;
+        return this.side_length * this.side_length * this.side_length;
     }
 }
