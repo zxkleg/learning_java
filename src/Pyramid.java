@@ -1,12 +1,11 @@
+import lombok.Builder;
+import lombok.Getter;
+@Builder
+@Getter
 public class Pyramid implements Shape {
     private final float side_length;
-    private final float hight;
-    public Pyramid(float side_length, float hight){
-        this.side_length = side_length;
-        this.hight = hight;
-    }
-    @Override
+    private final float height;
     public float getVolume() {
-        return  1F / 3F * this.side_length * this.side_length * this.hight;
+        return (float) 1 / 3 * this.side_length * side_length * side_length;
     }
 }

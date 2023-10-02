@@ -1,3 +1,2 @@
- interface Shape {
-    float getVolume();
+interface Shape {
 }
