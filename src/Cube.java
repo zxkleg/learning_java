@@ -3,8 +3,8 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class Cube implements Shape {
-    private final float side_length;
+    private final float sideLength;
     public float getVolume(){
-        return this.side_length * this.side_length * this.side_length;
+        return this.sideLength * this.sideLength * this.sideLength;
     }
 }
