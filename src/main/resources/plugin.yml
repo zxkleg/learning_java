@@ -1,0 +1,6 @@
+name: Plugin
+version: '${version}'
+main: org.zxkleg.myplugin.Plugin
+api-version: '1.19'
+authors: [zxkleg]
+description: My first study paper plugin
