@@ -15,7 +15,7 @@ public class SayHello extends BaseCommand {
         if (sender instanceof Player player) {
             player.sendMessage("Привет, " + player.getName() + "!");
         } else {
-            sender.sendMessage("Команда может быть выполнена только оператором");
+            sender.sendMessage("Команда может быть выполнена только оператором, не консолью");
         }
     }
 }
