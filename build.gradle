@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
 }
 
 group = 'org.zxkleg'
@@ -30,7 +30,6 @@ compileJava {
     options.encoding = 'UTF-8'
     options.compilerArgs += ["-parameters"]
     options.fork = true
-    options.forkOptions.executable = 'javac'
 }
 
 dependencies {
