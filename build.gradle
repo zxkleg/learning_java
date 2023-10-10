@@ -6,7 +6,7 @@ plugins {
 group = 'org.zxkleg'
 version = '1.0'
 
-sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
@@ -35,6 +35,7 @@ compileJava {
 dependencies {
     compileOnly "io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT"
     implementation "co.aikar:acf-paper:0.5.1-SNAPSHOT"
+    implementation "net.kyori:adventure-api:4.14.0"
 }
 
 def targetJavaVersion = 17

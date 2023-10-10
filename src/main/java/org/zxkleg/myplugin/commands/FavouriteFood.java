@@ -9,13 +9,6 @@ import org.zxkleg.myplugin.Plugin;
 
 @CommandAlias("food")
 public class FavouriteFood extends BaseCommand {
-
-    private final Plugin plugin;
-
-    public FavouriteFood(Plugin plugin) {
-        this.plugin = plugin;
-    }
-
     @Default
     public void onFavouriteFood(CommandSender sender, String[] args) {
         if (!(sender instanceof Player player)) {
@@ -24,14 +17,12 @@ public class FavouriteFood extends BaseCommand {
         }
         if (args.length > 0) {
             String newFavouriteFood = String.join(" ", args);
-            this.plugin.getConfig().set("favourite-food", newFavouriteFood);
-            this.plugin.saveConfig();
+            Plugin.getInstance().getConfig().set("favourite-food", newFavouriteFood);
+            Plugin.getInstance().saveConfig();
             player.sendMessage("Любимая еда была изменена на " + newFavouriteFood);
 
         } else {
-            String favouriteFood = this.plugin.getConfig().getString("favourite-food");
-            player.sendMessage("Любимая еда - " + favouriteFood);
-
+            player.sendMessage("Любимая еда - " + Plugin.getInstance().getConfig().getString("favourite-food"));
         }
     }
 }
