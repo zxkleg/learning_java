@@ -2,6 +2,7 @@ package org.zxkleg.myplugin.commands;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.CommandAlias;
+import co.aikar.commands.annotation.CommandCompletion;
 import co.aikar.commands.annotation.Default;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -11,9 +12,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.zxkleg.myplugin.utility.TeleportBowUtils;
 
-@CommandAlias("teleporbow")
+@CommandAlias("teleportbow")
 public class GiveTeleportBow extends BaseCommand{
     @Default
+    @CommandCompletion("@players")
     public void onGiveTeleportBow(CommandSender sender, String[] args) {
         if (!(sender instanceof Player player)) {
             sender.sendMessage("Команда может быть выполнена только оператором, не консолью");
@@ -34,7 +36,7 @@ public class GiveTeleportBow extends BaseCommand{
         }
         giveCreatedTeleportBow(target);
         player.sendMessage(
-                Component.text("Лук телепорт был успешно выдан игроку")
+                Component.text("Лук телепорт был успешно выдан игроку ")
                         .color(NamedTextColor.GREEN)
                         .append(Component.text(target.getName())));
     }
