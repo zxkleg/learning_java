@@ -25,7 +25,6 @@ public class TeleportBowListener implements Listener {
         event.getProjectile()
                 .getPersistentDataContainer()
                 .set(NamespacedKey.fromString("player_name"), PersistentDataType.STRING, event.getEntity().getName());
-
     }
     @EventHandler
     public void onArrowLand(ProjectileHitEvent event) {
@@ -47,7 +46,7 @@ public class TeleportBowListener implements Listener {
         }
         Location location = event.getEntity().getLocation();
         location.setYaw(player.getLocation().getYaw());
-        location.setPitch( player.getLocation().getPitch());
+        location.setPitch(player.getLocation().getPitch());
         player.teleport(location);
 
         event.getEntity().remove();
