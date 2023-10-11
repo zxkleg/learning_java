@@ -4,3 +4,8 @@ bow-description:
   - "Выстрели из лука"
   - "и телепортируйся"
 teleported-message: "Вжухх!"
+arrow-name: "Волшебная стрела игрока %playerName%"
+arrow-description:
+  - "Это твоя стрела"
+  - "Куда она упадёт"
+  - "Туда тебя перенесёт"

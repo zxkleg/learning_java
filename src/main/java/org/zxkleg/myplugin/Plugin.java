@@ -40,5 +40,4 @@ public final class Plugin extends JavaPlugin {
     public static Plugin getInstance() {
         return instance;
     }
-
 }
