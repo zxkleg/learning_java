@@ -24,6 +24,9 @@ repositories {
     maven {
         url = "https://hub.spigotmc.org/nexus/content/groups/public/"
     }
+    maven {
+        url 'https://repo.xenondevs.xyz/releases'
+    }
 }
 
 compileJava {
@@ -36,6 +39,7 @@ dependencies {
     compileOnly "io.papermc.paper:paper-api:1.19.4-R0.1-SNAPSHOT"
     implementation "co.aikar:acf-paper:0.5.1-SNAPSHOT"
     implementation "net.kyori:adventure-api:4.14.0"
+    implementation "xyz.xenondevs.invui:invui:1.22"
 }
 
 def targetJavaVersion = 17

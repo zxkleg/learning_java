@@ -1,13 +1,12 @@
 package org.zxkleg.myplugin;
 
-
 import co.aikar.commands.BukkitCommandManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.zxkleg.myplugin.commands.FavouriteFood;
 import org.zxkleg.myplugin.commands.GiveTeleportBow;
 import org.zxkleg.myplugin.commands.SayHello;
-
+import org.zxkleg.myplugin.commands.Shop;
 import org.zxkleg.myplugin.events.Events;
 import org.zxkleg.myplugin.events.TeleportBowListener;
 
@@ -29,6 +28,7 @@ public final class Plugin extends JavaPlugin {
         manager.registerCommand(new SayHello());
         manager.registerCommand(new FavouriteFood());
         manager.registerCommand(new GiveTeleportBow());
+        manager.registerCommand(new Shop());
 
         getLogger().info("Plugin is working!!");
     }

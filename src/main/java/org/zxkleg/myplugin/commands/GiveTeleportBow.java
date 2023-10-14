@@ -18,7 +18,7 @@ public class GiveTeleportBow extends BaseCommand{
     @CommandCompletion("@players")
     public void onGiveTeleportBow(CommandSender sender, String[] args) {
         if (!(sender instanceof Player player)) {
-            sender.sendMessage("Команда может быть выполнена только оператором, не консолью");
+            sender.sendMessage("Команда может быть выполнена только игроком, не консолью");
             return;
         }
         if (args.length == 0){
