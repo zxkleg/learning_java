@@ -13,7 +13,7 @@ import org.bukkit.inventory.ItemStack;
 import org.zxkleg.myplugin.utility.TeleportBowUtils;
 
 @CommandAlias("teleportbow")
-public class GiveTeleportBow extends BaseCommand{
+public class GiveTeleportBow extends BaseCommand {
     @Default
     @CommandCompletion("@players")
     public void onGiveTeleportBow(CommandSender sender, String[] args) {
@@ -21,12 +21,12 @@ public class GiveTeleportBow extends BaseCommand{
             sender.sendMessage("Команда может быть выполнена только игроком, не консолью");
             return;
         }
-        if (args.length == 0){
+        if (args.length == 0) {
             giveCreatedTeleportBow(player);
             return;
         }
         Player target = Bukkit.getPlayerExact(args[0]);
-        if (target == null){
+        if (target == null) {
             player.sendMessage(
                     Component.text("Игрок ")
                             .color(NamedTextColor.RED)
@@ -40,7 +40,8 @@ public class GiveTeleportBow extends BaseCommand{
                         .color(NamedTextColor.GREEN)
                         .append(Component.text(target.getName())));
     }
-    private void giveCreatedTeleportBow(Player target){
+
+    private void giveCreatedTeleportBow(Player target) {
         ItemStack bow = TeleportBowUtils.createTeleportBow();
         ItemStack arrow = TeleportBowUtils.createTeleportArrow(target.getName());
         target.getInventory().addItem(bow);

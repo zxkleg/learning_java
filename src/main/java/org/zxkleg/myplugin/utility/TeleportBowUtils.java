@@ -33,7 +33,8 @@ public class TeleportBowUtils {
 
         return bow;
     }
-    public static ItemStack createTeleportArrow(String playerName){
+
+    public static ItemStack createTeleportArrow(String playerName) {
         ItemStack arrow = new ItemStack(Material.ARROW, 1);
         ItemMeta arrowMeta = arrow.getItemMeta();
 
@@ -42,14 +43,16 @@ public class TeleportBowUtils {
                 .decorate(TextDecoration.BOLD)
                 .replaceText(config -> {
                     config.match("%playerName%");
-                    config.replacement(playerName);}));
+                    config.replacement(playerName);
+                }));
 
         arrowMeta.lore(formatLoreFromConfig(Plugin.getInstance().getConfig().getStringList("arrow-description")));
 
         arrow.setItemMeta(arrowMeta);
         return arrow;
     }
-    public static List<Component> formatLoreFromConfig(List<String> lore){
+
+    public static List<Component> formatLoreFromConfig(List<String> lore) {
         List<Component> formattedLore = new ArrayList<>();
         for (int i = 0; i != lore.size(); i++) {
             formattedLore.add(

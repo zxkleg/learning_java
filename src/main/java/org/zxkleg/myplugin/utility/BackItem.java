@@ -5,9 +5,10 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import xyz.xenondevs.invui.gui.PagedGui;
 import xyz.xenondevs.invui.item.ItemProvider;
-
 import xyz.xenondevs.invui.item.builder.ItemBuilder;
 import xyz.xenondevs.invui.item.impl.controlitem.PageItem;
+
+import static org.zxkleg.myplugin.utility.ShopUtils.serialize;
 
 public class BackItem extends PageItem {
 
@@ -18,9 +19,9 @@ public class BackItem extends PageItem {
     @Override
     public ItemProvider getItemProvider(PagedGui<?> gui) {
         ItemBuilder builder = new ItemBuilder(Material.OAK_SIGN);
-        builder.setDisplayName(ShopUtils.Serialize(
+        builder.setDisplayName(serialize(
                         Component.text("Предыдущая страница", NamedTextColor.GRAY)))
-                .addLoreLines(ShopUtils.Serialize(
+                .addLoreLines(serialize(
                         gui.hasPreviousPage()
                                 ? Component.text("Перейти на страницу ", NamedTextColor.GRAY)
                                 .append(Component.text(gui.getCurrentPage(), NamedTextColor.YELLOW))
@@ -29,5 +30,4 @@ public class BackItem extends PageItem {
                                 : Component.text("Вы на первой странице", NamedTextColor.RED)));
         return builder;
     }
-
 }

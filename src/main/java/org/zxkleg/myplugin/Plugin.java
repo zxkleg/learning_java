@@ -13,6 +13,11 @@ import org.zxkleg.myplugin.events.TeleportBowListener;
 public final class Plugin extends JavaPlugin {
 
     private static Plugin instance;
+
+    public static Plugin getInstance() {
+        return instance;
+    }
+
     @Override
     public void onEnable() {
         getLogger().info("Plugin is setting!!");
@@ -36,8 +41,5 @@ public final class Plugin extends JavaPlugin {
     @Override
     public void onDisable() {
         getLogger().info("Plugin has turned off!!");
-    }
-    public static Plugin getInstance() {
-        return instance;
     }
 }

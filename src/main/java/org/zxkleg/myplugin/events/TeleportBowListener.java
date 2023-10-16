@@ -15,17 +15,18 @@ import org.zxkleg.myplugin.Plugin;
 
 public class TeleportBowListener implements Listener {
     @EventHandler
-    public void onBowShoot(EntityShootBowEvent event){
+    public void onBowShoot(EntityShootBowEvent event) {
         if (!(event.getEntity() instanceof Player)) {
             return;
         }
-        if (!(event.getBow().getItemMeta().getPersistentDataContainer().has(NamespacedKey.fromString("is_telepot_bow")))){
+        if (!(event.getBow().getItemMeta().getPersistentDataContainer().has(NamespacedKey.fromString("is_telepot_bow")))) {
             return;
         }
         event.getProjectile()
                 .getPersistentDataContainer()
                 .set(NamespacedKey.fromString("player_name"), PersistentDataType.STRING, event.getEntity().getName());
     }
+
     @EventHandler
     public void onArrowLand(ProjectileHitEvent event) {
         if (!(event.getEntityType() == EntityType.ARROW)) {
@@ -38,10 +39,10 @@ public class TeleportBowListener implements Listener {
                 .getPersistentDataContainer()
                 .get(NamespacedKey.fromString("player_name"),
                         PersistentDataType.STRING);
-        if (playerName == null){
+        if (playerName == null) {
             return;
         }
-        if (!(playerName.equalsIgnoreCase(player.getName()))){
+        if (!(playerName.equalsIgnoreCase(player.getName()))) {
             return;
         }
         Location location = event.getEntity().getLocation();
@@ -53,6 +54,6 @@ public class TeleportBowListener implements Listener {
 
         player.sendMessage(
                 Component.text(Plugin.getInstance().getConfig().getString("teleported-message"))
-                .color(NamedTextColor.GREEN));
+                        .color(NamedTextColor.GREEN));
     }
 }

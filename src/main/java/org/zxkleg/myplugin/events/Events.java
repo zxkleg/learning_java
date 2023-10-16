@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 
 public class Events implements Listener {
     @EventHandler
-    public void onJump(PlayerJumpEvent event){
+    public void onJump(PlayerJumpEvent event) {
         Player player = event.getPlayer();
         player.sendMessage("Молодец!");
     }
