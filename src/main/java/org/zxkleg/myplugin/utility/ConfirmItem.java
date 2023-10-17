@@ -52,6 +52,13 @@ public class ConfirmItem extends AbstractItem {
             openShopWindow(player);
             return;
         }
+        if(player.getInventory().getItemInOffHand().getType() == Material.DIAMOND){
+            int amountInOffHand = player.getInventory().getItemInOffHand().getAmount();
+            player.getInventory().setItemInOffHand((amountInOffHand > remainPay)
+                    ? new ItemStack(Material.DIAMOND, amountInOffHand - remainPay)
+                    : null);
+            remainPay -= amountInOffHand;
+        }
         for (ItemStack del : player.getInventory().getContents()) {
             if (del == null) {
                 continue;
@@ -60,6 +67,9 @@ public class ConfirmItem extends AbstractItem {
                 player.getInventory().removeItem(del);
                 remainPay -= 64;
                 continue;
+            }
+            if(remainPay <= 0){
+                break;
             }
             player.getInventory().removeItem(new ItemStack(Material.DIAMOND, remainPay));
             break;
